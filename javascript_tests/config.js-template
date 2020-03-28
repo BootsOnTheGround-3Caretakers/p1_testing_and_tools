@@ -1,0 +1,8 @@
+var configs = {};
+
+configs.base_domain_url = "https://json-requests-dot-aqueous-choir-160420.appspot.com";
+configs.verify_token_url = "https://json-requests-dot-aqueous-choir-160420.appspot.com/p1s5t1-oauth-verify";
+configs.user_email = "<ADD ADD FIREBASE USER EMAIL HERE>";
+configs.user_password = "<ADD ADD FIREBASE USER PASSWORD HERE>";
+
+module.exports = configs;

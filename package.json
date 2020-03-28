@@ -1,0 +1,29 @@
+{
+  "name": "p1_testing_and_tools",
+  "version": "1.0.0",
+  "description": "Python scripts to test / manually alter data for DGnet Watchdog services",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "firebase": "^7.6.1",
+    "firebase-tools": "^7.16.1",
+    "form-data": "^3.0.0",
+    "noquery-ajax": "^1.1.0",
+    "utf8": "^3.0.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamianoGlobal/dgnet_watchdog_test_tools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamianoGlobal/dgnet_watchdog_test_tools/issues"
+  },
+  "homepage": "https://github.com/DamianoGlobal/dgnet_watchdog_test_tools#readme"
+}
