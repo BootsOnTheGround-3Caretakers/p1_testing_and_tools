@@ -39,7 +39,10 @@ service1['RSA'] = {'p1s2t3_skill_uid': 'uid'}
 #assign skill to user
 service2 = {}
 service2['name'] = "p1s2t3-add-modify-user-skill"
-service2['PMA'] = {"p1s2t3_special_notes": test_today + str(round(time.time()))}
+service2['PMA'] = {
+    "p1s2t3_special_notes": test_today + str(round(time.time())),
+    "p1s2t3_total_capacity": 1
+}
 
 
 data = {
