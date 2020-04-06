@@ -41,7 +41,7 @@ service2 = {}
 service2['name'] = "p1s2t3-add-modify-user-skill"
 service2['PMA'] = {
     "p1s2t3_special_notes": test_today + str(round(time.time())),
-    "p1s2t3_total_capacity": 1
+    "p1s2t3_total_capacity": str(1)
 }
 
 
