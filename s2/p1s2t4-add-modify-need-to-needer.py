@@ -9,7 +9,7 @@ s4t1_api_key = 'p1s4t1_api_key'
 
 now = datetime.now()
 today = datetime.today().strftime('%m-%d')
-test_name = "p1s2t3"
+test_name = "p1s2t4"
 test_today = test_name+ "-" + today
 
 params = {}
