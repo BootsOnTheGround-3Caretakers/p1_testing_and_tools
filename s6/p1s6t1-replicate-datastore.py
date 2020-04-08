@@ -10,16 +10,19 @@ s4t1_api_key = 'p1s4t1_api_key'
 params = {}
 params['transaction_user_uid'] = "1"
 
-service0 = {}
-service0['name'] = "p1s6t1-replicate-datastore"
-service0['PMA'] = {
-    #'p1s6t1_datastore_name': 'DsP1Users',
-    'p1s6t1_datastore_name': 'DsP1CaretakerSkills',
-}
+service_list = []
+datastore_list = ['DsP1Users']
+for datastore_name in datastore_list:
+    service0 = {}
+    service0['name'] = "p1s6t1-replicate-datastore"
+    service0['PMA'] = {
+        'p1s6t1_datastore_name': datastore_name,
+    }
+    service_list.append(service0)
 
 data = {
     s4t1_api_key: 'BootsOnTheGround',
-    s4t1_task_sequence_list: json.dumps([service0]),
+    s4t1_task_sequence_list: json.dumps(service_list),
 }
 
 return_value = requests.post(

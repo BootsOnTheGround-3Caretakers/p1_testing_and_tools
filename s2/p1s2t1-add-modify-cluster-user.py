@@ -26,7 +26,20 @@ service0['PMA'] = {
 }
 service0['RSA'] = {'p1s2t1_user_uid': 'uid',
                    'p1s1t5_user_uid': 'uid',
-                   'p1s1t3_user_uid': 'uid'}
+                   'p1s1t3_user_uid': 'uid',
+                   'p1s2t10_user_uid': 'uid'}
+
+service0_1 = {}
+service0_1['name'] = "p1s2t10-modify-user-information"
+service0_1['PMA'] = {
+    "p1s2t10_first_name": test_today + str(round(time.time())),
+    "p1s2t10_last_name": test_today + str(round(time.time())),
+    "p1s2t10_country_uid": "US",
+    "p1s2t10_region_uid": "0WtwHTADzxNxdEogI3ZX|1585555853",
+    "p1s2t10_area_uid": "0072xmlHlCgII3DmSG88|1585562994"
+
+}
+
 
 #create needer entry for new user
 service1 = {}
@@ -66,7 +79,7 @@ service5['PMA'] = {"p1s2t1_user_roles": "b"}
  
 data = {
     s4t1_api_key: 'BootsOnTheGround',
-    s4t1_task_sequence_list: json.dumps([service0,service1,service2,service3,service4,service5]),
+    s4t1_task_sequence_list: json.dumps([service0,service0_1,service1,service2,service3,service4,service5]),
 }
 
 return_value = requests.post(
