@@ -10,9 +10,9 @@ var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.co
 var params = {
     // p1s3_firebase_email: configs.user_email,
     // p1s3_token: '',
-    p1s3t2_need_uid: '5640060892348416',
-    p1s3t2_needer_uid: '5733636452122624',
-    p1s3t2_user_uid: '5709624632147968',
+    p1s3t2_need_uid: '5632908932939776',
+    p1s3t2_needer_uid: '5716776893546496',
+    p1s3t2_user_uid: 'p1s2t1-04-081586331875_needer',
     p1s3t2_special_requests: 'Be precise on the dose.',
 };
 
