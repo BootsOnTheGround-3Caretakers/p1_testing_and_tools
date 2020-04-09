@@ -1,20 +1,16 @@
-// const FirebaseAuth = require('../../../includes/firebase_auth.js');
-// const configs = require('../../configs');
+const FirebaseAuth = require('../../../includes/firebase_auth.js');
+const configs = require('../../configs');
 const querystring = require('querystring');
 const axios = require('axios')
 
-// var firebase_auth = new FirebaseAuth();
+var firebase_auth = new FirebaseAuth();
 var request_time = 0;
 var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/p1s3t4-modify-user-information";
 
-////
-// TODO - mu-Confirm format and Add missing params
-////
-
 var params = {
-    // p1s3_firebase_email: configs.user_email,
-    // p1s3_token: '',
-    p1s3t4_user_uid: 'p1s2t1-04-081586330801_giver',
+    p1s3_firebase_email: configs.user_email,
+    p1s3_token: '',
+    p1s3t4_user_uid: '5639274879778816',
     p1s3t4_first_name: 'giver',
     p1s3t4_last_name: 'p1s2t1-04-08',
     p1s3t4_phone_number: "+62815111111",
@@ -24,9 +20,9 @@ var params = {
     p1s3t4_home_address: "7371 Sherwood Street New York, NY 10032",
     p1s3t4_email_address: "example@mail.com",
     p1s3t4_firebase_uid: "0x8KZen30zWV6GWDH4ZP1czqapx2",
-    p1s3t4_country_uid: "",
-    p1s3t4_region_uid: "",
-    p1s3t4_area_uid: "",
+    p1s3t4_country_uid: "US",
+    p1s3t4_region_uid: "0WtwHTADzxNxdEogI3ZX|1585555853",
+    p1s3t4_area_uid: "0072xmlHlCgII3DmSG88|1585562994",
     p1s3t4_description: "New User Description",
     p1s3t4_preferred_radius: "5",
     p1s3t4_account_flags: "",
@@ -35,7 +31,7 @@ var params = {
 };
 
 var verify_token_success_callback = function(token) {
-  // params['p1s3_token'] = token;
+  params['p1s3_token'] = token;
   request_time = new Date().getTime();
 
   axios.post(request_url, querystring.stringify(params))
@@ -53,7 +49,4 @@ var verify_token_success_callback = function(token) {
     });
 }
 
-// Making request directly without firebase authentication
-verify_token_success_callback("");
-
-// firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback)
+firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback)
