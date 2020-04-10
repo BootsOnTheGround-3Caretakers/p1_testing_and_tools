@@ -1,22 +1,22 @@
-// const FirebaseAuth = require('../../../includes/firebase_auth.js');
-// const configs = require('../../configs');
+const FirebaseAuth = require('../../../includes/firebase_auth.js');
+const configs = require('../../configs');
 const querystring = require('querystring');
 const axios = require('axios')
 
-// var firebase_auth = new FirebaseAuth();
+var firebase_auth = new FirebaseAuth();
 var request_time = 0;
-var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/s3/p1s3t7-add-skill-to-user";
+var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/p1s3t7-add-skill-to-user";
 
 var params = {
-    // p1s3_firebase_email: configs.user_email,
-    // p1s3_token: '',
-    p1s3t7_skill_uid: '5640060892348416',
-    p1s3t7_user_uid: '5709624632147968',
+    p1s3_firebase_email: configs.user_email,
+    p1s3_token: '',
+    p1s3t7_skill_uid: '5629499534213120',
+    p1s3t7_user_uid: '5657712503291904',
     p1s3t7_special_notes: 'General Surgical Specialties',
 };
 
 var verify_token_success_callback = function(token) {
-  // params['p1s3_token'] = token;
+  params['p1s3_token'] = token;
   request_time = new Date().getTime();
 
   axios.post(request_url, querystring.stringify(params))
@@ -35,6 +35,6 @@ var verify_token_success_callback = function(token) {
 }
 
 // Making request directly without firebase authentication
-verify_token_success_callback("");
+// verify_token_success_callback("");
 
-// firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback)
+firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback)

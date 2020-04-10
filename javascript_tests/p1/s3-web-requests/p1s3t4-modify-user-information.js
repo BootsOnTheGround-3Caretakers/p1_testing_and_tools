@@ -1,7 +1,7 @@
 const FirebaseAuth = require('../../../includes/firebase_auth.js');
 const configs = require('../../configs');
 const querystring = require('querystring');
-const axios = require('axios')
+const axios = require('axios');
 
 var firebase_auth = new FirebaseAuth();
 var request_time = 0;

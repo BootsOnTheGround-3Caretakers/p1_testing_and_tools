@@ -1,19 +1,22 @@
 const FirebaseAuth = require('../../../includes/firebase_auth.js');
 const configs = require('../../configs');
 const querystring = require('querystring');
-const axios = require('axios')
+const axios = require('axios');
 
 var firebase_auth = new FirebaseAuth();
 var request_time = 0;
-var request_url = "https://p1s5-web-requests-dot-aqueous-choir-160420.appspot.com/p1s5-get-user-profile";
+var request_url = "https://p1s5-web-requests-dot-aqueous-choir-160420.appspot.com/p1s5t1-get-user-profile";
 
 var params = {
-    requesting_user_uid: '5709624632147968',
-    user_uid: '5709624632147968'
+  p1s5_firebase_email: configs.user_email,
+  p1s5_token: '',
+  p1s5t1_requesting_user_uid: '4813287573159936',
+  p1s5t1_user_uid: '5076324926357504',
+  //p1s5t2_phone_number: '123456789',
 };
 
 var verify_token_success_callback = function(token) {
-  params['firebase_auth_token'] = token;
+  params['p1s5_token'] = token;
   request_time = new Date().getTime();
 
   axios.post(request_url, querystring.stringify(params))
@@ -32,4 +35,4 @@ var verify_token_success_callback = function(token) {
 }
 
 /// Can only be tested with the firebase authentication
-// firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback)
+firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback);
