@@ -5,13 +5,13 @@ const axios = require('axios')
 
 var firebase_auth = new FirebaseAuth();
 var request_time = 0;
-var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/p1s3t11-add-hashtag";
+var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/p1s3t14-remove-user-hashtag";
 
 var params = {
     p1s3_firebase_email: configs.user_email,
     p1s3_token: '',
-    p1s3t11_name: '#Test-Hashtag',
-    p1s3t11_description: 'Test-Hashtag-Description'
+    p1s3t14_user_uid: '4813287573159936',
+    p1s3t14_hashtag_uid: '5143213941719040'
 };
 
 var verify_token_success_callback = function(token) {
