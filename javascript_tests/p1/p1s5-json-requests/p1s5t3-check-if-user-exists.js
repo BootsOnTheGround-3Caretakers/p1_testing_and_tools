@@ -5,34 +5,17 @@ const axios = require('axios');
 
 var firebase_auth = new FirebaseAuth();
 var request_time = 0;
-var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/p1s3t4-modify-user-information";
+var request_url = "https://p1s5-web-requests-dot-aqueous-choir-160420.appspot.com/p1s5t3-check-if-user-exists";
 
 var params = {
-    p1s3_firebase_email: configs.user_email,
-    p1s3_token: '',
-    p1s3t4_user_uid: '5639274879778816',
-    p1s3t4_first_name: 'giver',
-    p1s3t4_last_name: 'p1s2t1-04-08',
-    p1s3t4_phone_number: "+62815111111",
-    p1s3t4_phone_texts: "bbb",
-    p1s3t4_phone_2: "+62815111112",
-    p1s3t4_emergency_contact: "+62815111113",
-    p1s3t4_home_address: "7371 Sherwood Street New York, NY 10032",
-    p1s3t4_email_address: "example@mail.com",
-    p1s3t4_firebase_uid: "0x8KZen30zWV6GWDH4ZP1czqapx2",
-    p1s3t4_country_uid: "US",
-    p1s3t4_region_uid: "0WtwHTADzxNxdEogI3ZX|1585555853",
-    p1s3t4_area_uid: "0072xmlHlCgII3DmSG88|1585562994",
-    p1s3t4_description: "New User Description",
-    p1s3t4_preferred_radius: "5",
-    p1s3t4_account_flags: "",
-    p1s3t4_location_cord_long: "-73.935242",
-    p1s3t4_location_cord_lat: "40.730610",
-    p1s3t4_gender: "male",
+  p1s5_firebase_email: configs.user_email,
+  p1s5_token: '',
+  p1s5t3_email_address: 'aldian.f@gmail.com',
+  //p1s5t3_phone_number: '123456789',
 };
 
 var verify_token_success_callback = function(token) {
-  params['p1s3_token'] = token;
+  params['p1s5_token'] = token;
   request_time = new Date().getTime();
 
   axios.post(request_url, querystring.stringify(params))
@@ -50,4 +33,5 @@ var verify_token_success_callback = function(token) {
     });
 }
 
-firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback)
+/// Can only be tested with the firebase authentication
+firebase_auth.loginUser(configs.user_email, configs.user_password, verify_token_success_callback);
