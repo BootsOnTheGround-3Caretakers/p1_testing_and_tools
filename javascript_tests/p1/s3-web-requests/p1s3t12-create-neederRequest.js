@@ -5,12 +5,15 @@ const axios = require('axios')
 
 var firebase_auth = new FirebaseAuth();
 var request_time = 0;
-var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/p1s3t12-create-needer-request";
+var request_url = "https://p1s3-web-requests-dot-aqueous-choir-160420.appspot.com/p1s3t12-create-modify-needer-request";
 
 var params = {
     p1s3_firebase_email: configs.user_email,
     p1s3_token: '',
-    p1s3t12_user_uid: '4813287573159936',
+    p1s3t12_user_uid: '5717271485874176',
+    p1s3t12_needer_uid: '5767709300097024',
+    p1s3t12_private_metadata: 'private_metadata_1235',
+    p1s3t12_public_metadata: 'public_metadata_1235',
 };
 
 var verify_token_success_callback = function(token) {
